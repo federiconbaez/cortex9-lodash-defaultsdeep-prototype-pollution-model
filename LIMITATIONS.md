@@ -16,5 +16,6 @@
 - `_.merge`, `_.mergeWith` with other customizers, `_.set`/`_.zipObjectDeep`
   and the `_.template` change in 4.17.12 are separate code paths and are not
   modelled.
-- CI is defined in `.github/workflows/ci.yml`; at the time of the local
-  commit it had only been run locally, not on a hosted runner.
+- CI is defined in `.github/workflows/ci.yml` (unit tests on Python 3.10–3.13, results regeneration). Results were also
+  reproduced locally on Python 3.13 and 3.10; the status of hosted runs is whatever the
+  repository's Actions page shows.
