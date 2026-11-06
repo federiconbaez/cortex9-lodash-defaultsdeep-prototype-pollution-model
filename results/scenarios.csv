@@ -1,0 +1,15 @@
+scenario,version,pollution,constructor_guard_hits,result
+01_ghsa_constructor_prototype,4.17.11,Object.prototype.polluted='yes',0,{}
+01_ghsa_constructor_prototype,4.17.12,,1,"{""constructor"": {""prototype"": {""polluted"": ""yes""}}}"
+02_pr4336_constructor_a,4.17.11,Object.a=1,0,{}
+02_pr4336_constructor_a,4.17.12,,1,"{""constructor"": {""a"": 1}}"
+03_json_own_proto_key,4.17.11,,0,{}
+03_json_own_proto_key,4.17.12,,0,{}
+04_own_constructor_object,4.17.11,,0,"{""constructor"": {""x"": 1, ""y"": 2}}"
+04_own_constructor_object,4.17.12,,0,"{""constructor"": {""x"": 1, ""y"": 2}}"
+05_doc_example,4.17.11,,0,"{""a"": {""b"": 2, ""c"": 3}}"
+05_doc_example,4.17.12,,0,"{""a"": {""b"": 2, ""c"": 3}}"
+06_own_constructor_function,4.17.11,F.prototype.p=1,0,"{""constructor"": ""[Function F]""}"
+06_own_constructor_function,4.17.12,,1,"{""constructor"": {""prototype"": {""p"": 1}}}"
+07_nested_constructor,4.17.11,Object.prototype.q=1,0,"{""a"": {}}"
+07_nested_constructor,4.17.12,,1,"{""a"": {""constructor"": {""prototype"": {""q"": 1}}}}"

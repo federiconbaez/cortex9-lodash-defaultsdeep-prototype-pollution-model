@@ -1,0 +1,14 @@
+{
+ "name": "01_ghsa_constructor_prototype",
+ "description": "GHSA-jf85-cpcp-j695 description: defaultsDeep({}, {constructor: {prototype: {...}}}).",
+ "target": {},
+ "sources": [
+  {
+   "constructor": {
+    "prototype": {
+     "polluted": "yes"
+    }
+   }
+  }
+ ]
+}

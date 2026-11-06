@@ -1,0 +1,16 @@
+{
+ "name": "06_own_constructor_function",
+ "description": "Target has an own 'constructor' that is a function F: 4.17.11 merges into F.prototype; 4.17.12 replaces the own property instead.",
+ "target": {
+  "own_constructor_function": "F"
+ },
+ "sources": [
+  {
+   "constructor": {
+    "prototype": {
+     "p": 1
+    }
+   }
+  }
+ ]
+}

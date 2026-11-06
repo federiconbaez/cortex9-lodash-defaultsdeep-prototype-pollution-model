@@ -1,0 +1,24 @@
+{
+  "_note": "Derived by hand from lodash.js 4.17.11 (safeGet, baseMerge, baseMergeDeep, customDefaultsMerge, assignMergeValue) and the PR #4336 change, not from program output. Per version: [pollution, result].",
+  "01_ghsa_constructor_prototype": {
+    "4.17.11": [["Object.prototype.polluted='yes'"], {}],
+    "4.17.12": [[], {"constructor": {"prototype": {"polluted": "yes"}}}]},
+  "02_pr4336_constructor_a": {
+    "4.17.11": [["Object.a=1"], {}],
+    "4.17.12": [[], {"constructor": {"a": 1}}]},
+  "03_json_own_proto_key": {
+    "4.17.11": [[], {}],
+    "4.17.12": [[], {}]},
+  "04_own_constructor_object": {
+    "4.17.11": [[], {"constructor": {"x": 1, "y": 2}}],
+    "4.17.12": [[], {"constructor": {"x": 1, "y": 2}}]},
+  "05_doc_example": {
+    "4.17.11": [[], {"a": {"b": 2, "c": 3}}],
+    "4.17.12": [[], {"a": {"b": 2, "c": 3}}]},
+  "06_own_constructor_function": {
+    "4.17.11": [["F.prototype.p=1"], {"constructor": "[Function F]"}],
+    "4.17.12": [[], {"constructor": {"prototype": {"p": 1}}}]},
+  "07_nested_constructor": {
+    "4.17.11": [["Object.prototype.q=1"], {"a": {}}],
+    "4.17.12": [[], {"a": {"constructor": {"prototype": {"q": 1}}}}]}
+}

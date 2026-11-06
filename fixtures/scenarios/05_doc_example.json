@@ -1,0 +1,19 @@
+{
+ "name": "05_doc_example",
+ "description": "lodash docs example: defaultsDeep({a: {b: 2}}, {a: {b: 1, c: 3}}).",
+ "target": {
+  "json": {
+   "a": {
+    "b": 2
+   }
+  }
+ },
+ "sources": [
+  {
+   "a": {
+    "b": 1,
+    "c": 3
+   }
+  }
+ ]
+}

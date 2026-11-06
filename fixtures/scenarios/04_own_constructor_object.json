@@ -1,0 +1,18 @@
+{
+ "name": "04_own_constructor_object",
+ "description": "Benign: the target's own 'constructor' is a plain object, not a function; the 4.17.12 guard does not apply and both versions merge into it.",
+ "target": {
+  "json": {
+   "constructor": {
+    "x": 1
+   }
+  }
+ },
+ "sources": [
+  {
+   "constructor": {
+    "y": 2
+   }
+  }
+ ]
+}

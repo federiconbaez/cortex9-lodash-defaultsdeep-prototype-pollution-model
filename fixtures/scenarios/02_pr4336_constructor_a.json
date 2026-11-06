@@ -1,0 +1,12 @@
+{
+ "name": "02_pr4336_constructor_a",
+ "description": "Upstream test added in PR #4336: defaultsDeep({}, {constructor: {a: 1}}) must not add Object.a.",
+ "target": {},
+ "sources": [
+  {
+   "constructor": {
+    "a": 1
+   }
+  }
+ ]
+}

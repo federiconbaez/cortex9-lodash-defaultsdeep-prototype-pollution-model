@@ -1,0 +1,193 @@
+{
+ "01_ghsa_constructor_prototype": {
+  "4.17.11": {
+   "pollution": [
+    "Object.prototype.polluted='yes'"
+   ],
+   "result": {},
+   "constructor_guard_hits": 0,
+   "trace": [
+    "assign <Object.prototype>.polluted"
+   ]
+  },
+  "4.17.12": {
+   "pollution": [],
+   "result": {
+    "constructor": {
+     "prototype": {
+      "polluted": "yes"
+     }
+    }
+   },
+   "constructor_guard_hits": 1,
+   "trace": [
+    "safeGet(<target>, 'constructor') -> undefined (function guard)",
+    "assign <obj#6>.polluted",
+    "assign <obj#5>.prototype",
+    "assign <target>.constructor"
+   ]
+  }
+ },
+ "02_pr4336_constructor_a": {
+  "4.17.11": {
+   "pollution": [
+    "Object.a=1"
+   ],
+   "result": {},
+   "constructor_guard_hits": 0,
+   "trace": [
+    "assign <Object>.a"
+   ]
+  },
+  "4.17.12": {
+   "pollution": [],
+   "result": {
+    "constructor": {
+     "a": 1
+    }
+   },
+   "constructor_guard_hits": 1,
+   "trace": [
+    "safeGet(<target>, 'constructor') -> undefined (function guard)",
+    "assign <obj#4>.a",
+    "assign <target>.constructor"
+   ]
+  }
+ },
+ "03_json_own_proto_key": {
+  "4.17.11": {
+   "pollution": [],
+   "result": {},
+   "constructor_guard_hits": 0,
+   "trace": []
+  },
+  "4.17.12": {
+   "pollution": [],
+   "result": {},
+   "constructor_guard_hits": 0,
+   "trace": []
+  }
+ },
+ "04_own_constructor_object": {
+  "4.17.11": {
+   "pollution": [],
+   "result": {
+    "constructor": {
+     "x": 1,
+     "y": 2
+    }
+   },
+   "constructor_guard_hits": 0,
+   "trace": [
+    "assign <target.constructor>.y"
+   ]
+  },
+  "4.17.12": {
+   "pollution": [],
+   "result": {
+    "constructor": {
+     "x": 1,
+     "y": 2
+    }
+   },
+   "constructor_guard_hits": 0,
+   "trace": [
+    "assign <target.constructor>.y"
+   ]
+  }
+ },
+ "05_doc_example": {
+  "4.17.11": {
+   "pollution": [],
+   "result": {
+    "a": {
+     "b": 2,
+     "c": 3
+    }
+   },
+   "constructor_guard_hits": 0,
+   "trace": [
+    "assign <target.a>.c"
+   ]
+  },
+  "4.17.12": {
+   "pollution": [],
+   "result": {
+    "a": {
+     "b": 2,
+     "c": 3
+    }
+   },
+   "constructor_guard_hits": 0,
+   "trace": [
+    "assign <target.a>.c"
+   ]
+  }
+ },
+ "06_own_constructor_function": {
+  "4.17.11": {
+   "pollution": [
+    "F.prototype.p=1"
+   ],
+   "result": {
+    "constructor": "[Function F]"
+   },
+   "constructor_guard_hits": 0,
+   "trace": [
+    "assign <F.prototype>.p"
+   ]
+  },
+  "4.17.12": {
+   "pollution": [],
+   "result": {
+    "constructor": {
+     "prototype": {
+      "p": 1
+     }
+    }
+   },
+   "constructor_guard_hits": 1,
+   "trace": [
+    "safeGet(<target>, 'constructor') -> undefined (function guard)",
+    "assign <obj#6>.p",
+    "assign <obj#5>.prototype",
+    "assign <target>.constructor"
+   ]
+  }
+ },
+ "07_nested_constructor": {
+  "4.17.11": {
+   "pollution": [
+    "Object.prototype.q=1"
+   ],
+   "result": {
+    "a": {}
+   },
+   "constructor_guard_hits": 0,
+   "trace": [
+    "assign <Object.prototype>.q",
+    "assign <target>.a"
+   ]
+  },
+  "4.17.12": {
+   "pollution": [],
+   "result": {
+    "a": {
+     "constructor": {
+      "prototype": {
+       "q": 1
+      }
+     }
+    }
+   },
+   "constructor_guard_hits": 1,
+   "trace": [
+    "safeGet(<obj#6>, 'constructor') -> undefined (function guard)",
+    "assign <obj#8>.q",
+    "assign <obj#7>.prototype",
+    "assign <obj#6>.constructor",
+    "assign <target>.a"
+   ]
+  }
+ }
+}

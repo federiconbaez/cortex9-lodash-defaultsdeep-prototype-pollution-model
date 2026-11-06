@@ -1,0 +1,12 @@
+{
+ "name": "03_json_own_proto_key",
+ "description": "JSON.parse-style own '__proto__' key: guarded by safeGet in both versions.",
+ "target": {},
+ "sources": [
+  {
+   "__proto__": {
+    "polluted": "yes"
+   }
+  }
+ ]
+}

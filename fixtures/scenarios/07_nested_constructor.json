@@ -1,0 +1,16 @@
+{
+ "name": "07_nested_constructor",
+ "description": "The constructor path one level down: defaultsDeep({}, {a: {constructor: {prototype: {q: 1}}}}).",
+ "target": {},
+ "sources": [
+  {
+   "a": {
+    "constructor": {
+     "prototype": {
+      "q": 1
+     }
+    }
+   }
+  }
+ ]
+}
